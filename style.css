@@ -17,45 +17,50 @@
 
 /* Navbar */
 .navbar {
-    width: 90%;
+    width: 100%;
     margin: auto;
-    padding: 2.1875rem 0;
+    padding: 1.1875rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 70px;
+}
 
-.logo {
+.logo{
+    color: #fff;
     width: 10rem;
     cursor: pointer;
+
 }
 
-.navbar ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 1.25rem;
-    position: relative;
+nav ul{
+    display: flex;
+    gap: 30px;
+    align-items: left;
 }
 
-.navbar ul li a {
+nav ul li{
+    list-style-type: none;
+}
+
+nav ul li a{
     text-decoration: none;
     color: #fff;
-    text-transform: uppercase;
 }
 
-.navbar ul li::after {
-    content: '';
-    height: 0.1875rem;
-    width: 0;
-    background: #009688;
-    position: absolute;
-    left: 0;
-    bottom: -0.625rem;
-    transition: 0.3s;
+.menu-icon{
+    display: none;
 }
 
-.navbar ul li:hover::after {
-    width: 100%;
+.menu-icon i{
+    color: #fff;
+    font-size: 30px;
 }
 
 /* Heading and Paragraphs */
@@ -162,17 +167,10 @@ button:hover {
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .navbar {
-        flex-direction: column;
         padding: 1.5rem 0;
-    }
-
-    .navbar ul {
-        padding: 0;
-        text-align: center;
-    }
-
-    .navbar ul li {
-        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     h2 {
@@ -208,6 +206,27 @@ button:hover {
 }
 
 @media screen and (max-width: 480px) {
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 240px;
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+        overflow: hidden;
+    }
+    nav ul li{
+        padding: 20px;
+        padding-top: 0;
+    }
+    .menu-icon{
+        position: absolute;
+        display: block;
+        left: 300px;
+    }
+    #menuList{
+        transition: all 0.5s;
+    }
     h2 {
         font-size: 2rem;
         top: 30%;
